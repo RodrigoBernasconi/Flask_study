@@ -1,0 +1,7 @@
+# Pastas
+.venv/
+__pycache__/
+instance/
+# Arquivos
+*.pyc
+.env

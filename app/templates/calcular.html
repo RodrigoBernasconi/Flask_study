@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1> Rota com Parâmetro</h1>
+
+    <p>Valor original: {{context['valor']}}</p>
+    <p>Dobro: {{context['valor_dobro']}}</p>
+
+    <a href="{{ url_for('homepage')}}" class="btn btn-primary col-3">Voltar</a>
+{% endblock %}

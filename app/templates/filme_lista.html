@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Lista de Filme</h1>
+
+    <div class="row mt-4 border rounded shadow">
+
+        <table class="table">
+            <thead class="table-primary">
+                <tr>
+                    <th>Titulo</th>
+                    <th>Ano</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for o in objects %}
+                <tr>
+                    <td>{{o.titulo}}</td>
+                    <td>{{o.ano}}</td>
+                    <td class="text-end"><a href="{{url_for('detailFilme', id=o.id)}}" class="btn btn-secondary">Detalhes</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

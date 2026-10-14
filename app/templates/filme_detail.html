@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Filme: {{object.titulo}}</h1>
+
+    <div class="row mt-4 border rounded shadow p-4">
+        <div class="col-12 mt-3 text-center">
+            <img src="{{ url_for('static', filename='data/filmes/{}'.format(object.image))}}" alt="">
+        </div>
+        <div class="col-12">
+            <strong>Ano:</strong> {{object.ano}}
+        </div>
+        <div class="col-12 mt-3">
+            <strong>Resumo</strong>
+            <p>
+                {% for r in object.resumo.split('\n') %}
+                    {{r}} <br>
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+{% endblock %}

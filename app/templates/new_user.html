@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Cadastro de Usuário</h1>
+
+    <form method="post" class="form mt-2 p-4 border shadow rounded">
+        {{form.csrf_token}}
+
+        {{form.username.label()}}
+        {{form.username(class='form-control')}}
+
+        {{form.name.label()}}
+        {{form.name(class='form-control')}}
+
+        {{form.nickname.label()}}
+        {{form.nickname(class='form-control')}}
+
+        {{form.email.label()}}
+        {{form.email(class='form-control')}}
+
+        {{form.password.label()}}
+        {{form.password(class='form-control')}}
+
+        {{form.confirm_password.label()}}
+        {{form.confirm_password(class='form-control')}}
+
+        <br><br>
+        <div class="row justify-content-end">
+            <div class="col-4">
+                {{form.submit(class='btn btn-primary col-12')}}
+            </div>
+        </div>
+    </form>
+{% endblock %}

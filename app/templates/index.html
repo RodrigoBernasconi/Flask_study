@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- <img src="{{ url_for('static', filename='img/FlaskLogo.png')}}" alt=""> -->
+
+    <h1>Bem Vindos ao Primeiro Projeto Flask</h1>
+
+    <p>Está é a página Raiz do projeto</p>
+
+    <p>Usuario: {{context.usuario}} & {{context.idade}} anos</p>
+    
+    <p>Mensagem: <span id="msg_back"></span></p>
+
+    {% include 'lista.html' %}
+
+    <script>
+        const msg_back = document.getElementById('msg_back')
+        fetch('{{ url_for("dados")}}')
+            .then(response => response.json())
+            .then(data => {
+                msg_back.innerHTML = data.mensagem;
+            });
+    </script>
+{% endblock %}
